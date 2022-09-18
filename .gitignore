@@ -1,0 +1,8 @@
+﻿src/Infrastructure/bin
+src/Infrastructure/obj
+src/ApplicationCore/obj
+src/ApplicationCore/bin
+.vs
+tests/UnitTests/obj
+tests/UnitTests/bin
+src/Web/ClientApp/.angular/cache

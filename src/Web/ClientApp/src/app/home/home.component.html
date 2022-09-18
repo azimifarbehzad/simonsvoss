@@ -1,0 +1,54 @@
+<form [formGroup]="searchForm"><input class="search-input" formControlName="search" placeholder="Search Items" autofocus></form>
+<div class="item">
+  <div class="col-name">
+    Name
+  </div>
+  <div class="col-type-name">
+    Type Name
+  </div>
+  <div class="col-score">
+    Score (Weights)
+  </div>
+  <div class="col-more">
+    More
+  </div>
+  <div class="col-description">
+    Description
+  </div>
+  
+</div>
+<hr>
+<div *ngFor="let item of items">
+  <div class="item">
+    <div class="col-name" [innerHtml]="item.name | highlighter:searchText:''">
+
+    </div>
+    <div class="col-type-name">
+      {{item.typeName}}
+    </div>
+    <div class="col-score">
+      {{item.score}}
+    </div>
+   
+    <div class="col-more">
+      <div *ngIf="item.type==1">SN=<span [innerHtml]="item.lock.serialNumber | highlighter:searchText:''"></span></div>
+      <div *ngIf="item.type==1">Floor=<span [innerHtml]="item.lock.floor | highlighter:searchText:''"></span></div>
+      <div *ngIf="item.type==1">RoomNumber=<span [innerHtml]="item.lock.roomNumber | highlighter:searchText:''"></span>
+      </div>
+
+
+      <div *ngIf="item.type==0">ShortCut=<span [innerHtml]="item.building.shortCut | highlighter:searchText:''"></span>
+      </div>
+
+
+      <div *ngIf="item.type==3">SN=<span [innerHtml]="item.medium.serialNumber | highlighter:searchText:''"></span>
+      </div>
+      <div *ngIf="item.type==3">Type=<span [innerHtml]="item.medium.type | highlighter:searchText:''"></span></div>
+      <div *ngIf="item.type==3">Owner=<span [innerHtml]="item.medium.owner | highlighter:searchText:''"></span>
+      </div>
+    </div>
+    <div [innerHtml]="item.description | highlighter:searchText:''" class="col-description">
+    </div>
+  </div>
+  <hr>
+</div>

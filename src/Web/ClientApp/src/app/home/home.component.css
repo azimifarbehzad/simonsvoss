@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.search-input {
+  margin: 30px 0;
+}
+.col-name,
+
+.col-description {
+  flex: 2;
+}
+.col-type-name,
+.col-score {
+  flex: 1;
+}
+::ng-deep .highlighted-text{
+  background-color: yellow;
+}
+.col-more{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  
+  overflow: hidden;
+}
